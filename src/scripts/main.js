@@ -354,9 +354,10 @@ const people = [
   },
 ];
 
-const tableItems = ['Name', 'Gender', 'Born', 'Died', 'Age', 'Century'];
-
 const dashboard = document.querySelector('.dashboard');
+
+const allTables = [...document.querySelectorAll('th')];
+const tableItems = allTables.map((item) => item.innerText);
 
 people.forEach((person) => {
   const tr = document.createElement('tr');
@@ -392,8 +393,3 @@ people.forEach((person) => {
     tr.appendChild(td);
   });
 });
-
-// eslint-disable-next-line no-console
-console.log(people); // you can remove it
-
-// write your code here
